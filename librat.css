@@ -1,0 +1,146 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+  color: #fff;
+}
+
+/* Overlay për errësim të lehtë të sfondit */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+/* NAVBAR */
+nav {
+  background-color: #a97c50; /* ngjyrë kafe/bezhë */
+  padding: 1em 40px;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Butoni "Kthehu mbrapa" */
+.nav-left .back-link {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.nav-left .back-link:hover {
+  text-decoration: underline;
+}
+
+/* Menuja në qendër */
+.nav-center {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-center ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-center li {
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1em;
+}
+
+.nav-center li:hover {
+  color: #ffc107;
+}
+
+/* MAIN */
+main {
+  padding: 40px 20px;
+  min-height: 80vh;
+}
+
+/* GRID me karta librash */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Kartat e librave me sfond krem */
+.book-card {
+  background-color: #dab876; 
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+}
+
+.book-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Citimi */
+#quote {
+  margin-top: 40px;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2em;
+  color: #ffc107;
+}
+
+/* FOOTER */
+footer {
+  background-color: #a97c50;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .books-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+}
